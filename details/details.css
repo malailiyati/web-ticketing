@@ -1,0 +1,505 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color: #1d4ed8;
+  --colortwo: #a0a3bd;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  letter-spacing: 0.75px;
+  font-size: 16px;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 70px;
+  background: rgb(255, 255, 255, 1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+header > a > svg {
+  width: 120px;
+  height: auto;
+}
+
+header > nav > a {
+  text-decoration: none;
+  color: black;
+}
+
+header > nav {
+  display: flex;
+  gap: 40px;
+}
+
+header > div {
+  display: flex;
+  gap: 20px;
+}
+
+header > div > a {
+  text-decoration: none;
+}
+
+header > nav .active {
+  color: var(--color);
+}
+header > nav a:hover:not(.active) {
+  color: var(--color);
+}
+
+.signIn {
+  background-color: white;
+  color: var(--color);
+  border: 1px solid var(--color);
+  padding: 7px 12px;
+  border-radius: 5px;
+}
+.signUp {
+  background-color: var(--color);
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 5px;
+}
+
+.signUp:hover {
+  background-color: #557ff3;
+}
+
+.signIn:hover {
+  background-color: #eeefff;
+}
+
+/* hero section */
+.hero-section {
+  position: relative;
+  background-image: url("../assets/spidermanDetail.jpg");
+  background-size: cover;
+  object-position: top;
+  height: 500px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.details img {
+  position: absolute;
+  top: 340px;
+  z-index: 99;
+  margin: 0 70px;
+  width: 300px;
+}
+
+.details {
+  display: flex;
+  gap: 400px;
+  margin-top: 20px;
+}
+
+.information h1 {
+  letter-spacing: 1px;
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.genre {
+  display: flex;
+  gap: 10px;
+}
+.genre span {
+  color: var(--colortwo);
+  background-color: #a0a3bd1a;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.information > div:nth-of-type(2) {
+  display: flex;
+  gap: 135px;
+  margin: 10px 0;
+}
+
+.information > div:nth-of-type(3) {
+  display: flex;
+  gap: 100px;
+}
+
+.information p {
+  margin: 5px 0;
+}
+
+.info-label {
+  font-size: 14px;
+  color: var(--colortwo);
+}
+
+.synopsis {
+  font-size: 20px;
+  margin: 50px 70px 15px;
+}
+
+.detail-synopsis {
+  color: var(--colortwo);
+  margin: 0 70px;
+  line-height: 35px;
+}
+
+.book-ticket {
+  margin: 20px 70px;
+}
+
+.book-ticket > div {
+  margin: 30px 0;
+}
+
+.book-ticket > div > h2 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.book-ticket > div > div > label {
+  line-height: 50px;
+}
+
+.book-ticket > div > div:nth-child(4) button {
+  background-color: var(--color);
+  color: white;
+  padding: 15px 90px;
+  border: none;
+  border-radius: 7px;
+  margin-top: 50px;
+}
+
+.book-ticket > div:nth-of-type(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-ticket > div:nth-of-type(1) > div > div {
+  background-color: #eff0f6;
+  border-radius: 5px;
+  padding: 10px 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.book-ticket > div:nth-of-type(1) > div > div > select {
+  border: none;
+  background-color: #eff0f6;
+  font-size: 16px;
+  color: #686868;
+}
+
+.book-ticket > div:nth-of-type(2) {
+  display: flex;
+  gap: 30px;
+}
+
+.book-ticket > div:nth-of-type(2) span:nth-child(1) {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.book-ticket > div:nth-of-type(2) span:nth-child(2) {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--colortwo);
+}
+
+.book-ticket > div:nth-of-type(3) {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+
+.book-ticket > div:nth-of-type(3) div {
+  border: 1px solid var(--colortwo);
+  width: 250px;
+  height: 120px;
+}
+
+.book-ticket > div:nth-of-type(3) > div > svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 15px;
+}
+
+.book-ticket > div:nth-of-type(3) div:nth-child(2) {
+  background-color: var(--color);
+  padding: 20px 10px;
+}
+
+.book-ticket > div:nth-of-type(3) div:nth-child(3) {
+  align-content: center;
+}
+
+.swap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.swap div:not(:nth-child(1)) {
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  padding: 12px;
+  border: 1px solid var(--colortwo);
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+.swap div:nth-child(1) {
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: 400;
+  background-color: var(--color);
+  color: white;
+  box-shadow: 2px 1px 5px rgba(130, 130, 255, 0.404);
+}
+
+.book-ticket > div:nth-of-type(5) {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.book-ticket > div:nth-of-type(5) a {
+  background-color: var(--color);
+  border: none;
+  color: white;
+  padding: 15px 70px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* footer */
+footer > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-sponsor {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  padding: 90px 90px 10px;
+}
+
+footer > div > div > h2 {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.explore {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > div > div:nth-child(1) p {
+  font-size: 16px;
+  color: #6e7191;
+  line-height: 30px;
+}
+
+footer > div > div:nth-child(2) span {
+  font-size: 14px;
+  color: #4e4b66;
+  line-height: 30px;
+}
+
+.sponsor svg {
+  margin: 10px 0;
+}
+
+footer > div > div:nth-child(4) div {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > div > div:nth-child(4) div > p {
+  font-size: 14px;
+  color: #6e7191;
+}
+
+footer > p {
+  font-size: 14px;
+  color: #4e4b66;
+  text-align: center;
+  padding: 40px 0 0;
+}
+
+#menu {
+  display: none;
+}
+
+.hamburger-icon {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    padding: 20px;
+    height: 80px;
+    gap: 0px;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+  header nav,
+  header div {
+    max-height: 0;
+    overflow: hidden;
+    background: rgb(255, 255, 255, 1);
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .item {
+    border-bottom: 1px solid var(--colortwo);
+    padding: 10px 30px;
+  }
+
+  .signIn,
+  .signUp {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 0px;
+    border-bottom: 1px solid var(--colortwo);
+  }
+
+  .signIn {
+    margin-top: 30px;
+  }
+
+  #menu:checked ~ nav,
+  #menu:checked ~ div {
+    max-height: 600px;
+    margin-top: 0px;
+  }
+
+  /* main */
+  .hero-section {
+    height: 400px;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: 250px;
+  }
+
+  .details img {
+    margin: 0 50px;
+    top: 200px;
+  }
+
+  .information {
+    margin: 0 50px;
+  }
+
+  .information h1 {
+    font-size: 21px;
+  }
+
+  .information h1,
+  .information > div:nth-of-type(1) {
+    text-align: center;
+  }
+
+  .information > div:nth-of-type(2) {
+    gap: 40px;
+  }
+
+  .information > div:nth-of-type(3) {
+    gap: 90px;
+  }
+
+  .book-ticket > div:nth-of-type(1) {
+    flex-direction: column;
+  }
+
+  .book-ticket > div:nth-of-type(1) label {
+    display: none;
+  }
+
+  .book-ticket > div:nth-of-type(3) {
+    flex-direction: column;
+  }
+
+  /* footer */
+  footer > div {
+    flex-direction: column;
+  }
+  .logo-sponsor {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+  }
+
+  footer > div > div > h2 {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .explore {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  footer > div > div:nth-child(4) > div p {
+    display: none;
+  }
+
+  .social-media {
+    flex-direction: row;
+  }
+}
