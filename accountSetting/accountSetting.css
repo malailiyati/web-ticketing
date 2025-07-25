@@ -305,6 +305,72 @@ main > section:nth-of-type(2) > div:nth-child(3) > div > div > input {
   border-radius: 7px;
 }
 
+/* footer */
+footer > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-sponsor {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  padding: 50px 90px 10px;
+  background-color: white;
+  margin-top: 70px;
+}
+
+footer > div > div > h2 {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.explore {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > div > div:nth-child(1) p {
+  font-size: 16px;
+  color: #6e7191;
+  line-height: 30px;
+}
+
+footer > div > div:nth-child(2) span {
+  font-size: 14px;
+  color: #4e4b66;
+  line-height: 30px;
+}
+
+.sponsor svg {
+  margin: 10px 0;
+}
+
+footer > div > div:nth-child(4) div {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > div > div:nth-child(4) div > p {
+  font-size: 14px;
+  color: #6e7191;
+}
+
+footer > p {
+  font-size: 14px;
+  color: #4e4b66;
+  text-align: center;
+  padding: 40px 0 0;
+}
+
 #menu {
   display: none;
 }
