@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="sign up web pembelian tiket">
     <title>Ticketing</title>
+    <script src="../dom/form.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
@@ -14,6 +15,7 @@
 </head>
 
 <body>
+
     <header><img src="../assets/logo tickitz.png" alt="logo tickitz"></a>
     </header>
     <main>
@@ -51,7 +53,7 @@
                 </div>
             </div>
             <form>
-                <div>
+                <div class="inputEmail">
                     <label for="email">Email</label>
                     <br>
                     <input type="text" name="surel" id="email" placeholder="Enter your email">
@@ -59,10 +61,7 @@
                 <div class="pass">
                     <label for="pwd">Password</label>
                     <br>
-                    <input type="text" name="pass" id="pwd" placeholder="Enter your password">
-                    <span class="material-symbols-outlined">
-                        visibility
-                    </span>
+                    <input type="password" name="pass" id="pwd" placeholder="Enter your password">
                 </div>
                 <div class="checkbox-line">
                     <input type="checkbox" name="agree" id="agree">
@@ -70,7 +69,7 @@
                 </div>
 
                 <br>
-                <button type="submit">Join For Free Now</button>
+                <button type="submit" id="submitBtn">Join For Free Now</button>
 
             </form>
             <div class="question">
@@ -113,6 +112,7 @@
             </div>
         </div>
     </main>
+
 </body>
 
 </html>

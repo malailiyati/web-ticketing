@@ -133,14 +133,6 @@ form > input {
   position: relative;
 }
 
-.material-symbols-outlined {
-  position: absolute;
-  top: 40px;
-  right: 15px;
-  color: #85868fba;
-  cursor: pointer;
-}
-
 .checkbox-line {
   display: flex;
   align-items: center;
@@ -218,6 +210,17 @@ div > img {
   border-radius: 50%;
   width: 20px;
   height: 20px;
+}
+
+.errorText {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+#email,
+#pwd {
+  margin-bottom: 5px;
 }
 
 @media screen  and (max-width: 768px){
