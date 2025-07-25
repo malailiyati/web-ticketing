@@ -34,30 +34,43 @@ header > a > svg {
   height: auto;
 }
 
-header > nav > a {
+.allnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 250px;
+}
+
+header > div > nav > a {
   text-decoration: none;
   color: black;
 }
 
-header > nav {
+header > div > nav {
   display: flex;
   gap: 40px;
 }
 
-header > div {
+header > div > div {
   display: flex;
   gap: 20px;
 }
 
-header > div > a {
+header > div > div > a {
   text-decoration: none;
 }
 
-header > nav .active {
+header > div > nav .active {
   color: var(--color);
 }
-header > nav a:hover:not(.active) {
+header > div > nav a:hover:not(.active) {
   color: var(--color);
+}
+
+/* navBtn */
+.navBtn,
+.nav {
+  display: flex;
 }
 
 .signIn {
@@ -315,23 +328,6 @@ section {
   font-size: 16px;
 }
 
-.continue a {
-  text-decoration: none;
-  color: var(--color);
-}
-
-.continue > div {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.continue:hover {
-  text-decoration: underline;
-  color: var(--color);
-}
-
 .swap {
   display: flex;
   justify-content: center;
@@ -362,6 +358,7 @@ section {
 
 /* subcribe */
 .subscribe > div {
+  position: relative;
   background-color: var(--color);
   margin: 0 70px;
   border-radius: 30px;
@@ -369,18 +366,18 @@ section {
   text-align: center;
   height: fit-content;
   overflow: hidden;
+  padding: 100px 20px;
 }
 
 .subscribe > div > h2 {
   color: white;
-  margin: 70px;
+  margin-bottom: 70px;
 }
 
 .subscribe > div > div {
   display: flex;
   justify-content: center;
   gap: 7px;
-  position: relative;
 }
 
 .subscribe > div > div input {
@@ -406,8 +403,8 @@ section {
   height: 150px;
   border-radius: 50%;
   border: 5px solid white;
-  bottom: -80px;
-  left: 1000px;
+  bottom: -70px;
+  right: -60px;
 }
 
 /* footer */
@@ -474,10 +471,6 @@ footer > p {
   padding: 40px 0 0;
 }
 
-#menu {
-  display: none;
-}
-
 .hamburger-icon {
   display: none;
   font-size: 32px;
@@ -489,46 +482,43 @@ footer > p {
   /* header */
   header {
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 0px;
     height: 80px;
     gap: 0px;
+  }
+
+  .nav,
+  .navBtn {
+    display: none;
+  }
+
+  .nav.active,
+  .navBtn.active {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
   }
 
   .hamburger-icon {
     display: block;
   }
-  header nav,
-  header div {
-    max-height: 0;
-    overflow: hidden;
-    background: rgb(255, 255, 255, 1);
+
+  .allnavbar {
     flex-direction: column;
     width: 100%;
-  }
-
-  .item {
-    border-bottom: 1px solid var(--colortwo);
-    padding: 10px 30px;
-  }
-
-  .signIn,
-  .signUp {
     background-color: white;
-    color: black;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 0px;
-    border-bottom: 1px solid var(--colortwo);
+    gap: 15px;
+    align-items: flex-start;
+    margin-top: 15px;
   }
 
-  .signIn {
-    margin-top: 30px;
+  .allnavbar > div {
+    margin: 15px 0;
   }
 
-  #menu:checked ~ nav,
-  #menu:checked ~ div {
-    max-height: 600px;
-    margin-top: 0px;
+  .navBtn {
+    width: 100%;
   }
 
   /* hero section */
@@ -543,7 +533,17 @@ footer > p {
 
   /* image */
   .movie-image img {
-    width: 250px;
+    width: 100%;
+  }
+
+  .movie-list {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .movie-card {
+    width: 200px;
+    margin: 10px;
   }
 
   /* subcribe */
@@ -555,22 +555,14 @@ footer > p {
     gap: 10px;
   }
 
-  .subscribe > div > div button {
-    margin: 0 20px;
-  }
-
   .subscribe > div > div button,
   .subscribe > div > div input {
-    max-width: 90%;
-    width: 90%;
-    padding: 15px 20px;
+    padding: 20px 30px;
+    max-width: 100%;
   }
 
-  .circle {
-    bottom: -20px;
-    left: 320px;
-    width: 100px;
-    height: 100px;
+  .subscribe > div > div input {
+    min-width: 100%;
   }
 
   /* footer */
