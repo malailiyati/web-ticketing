@@ -35,30 +35,43 @@ header > a > svg {
   height: auto;
 }
 
-header > nav > a {
+.allnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 250px;
+}
+
+header > div > nav > a {
   text-decoration: none;
   color: black;
 }
 
-header > nav {
+header > div > nav {
   display: flex;
   gap: 40px;
 }
 
-header > div {
+header > div > div {
   display: flex;
   gap: 20px;
 }
 
-header > div > a {
+header > div > div > a {
   text-decoration: none;
 }
 
-header > nav .active {
+header > div > nav .active {
   color: var(--color);
 }
-header > nav a:hover:not(.active) {
+header > div > nav a:hover:not(.active) {
   color: var(--color);
+}
+
+/* navBtn */
+.navBtn,
+.nav {
+  display: flex;
 }
 
 .signIn {
@@ -311,11 +324,6 @@ footer > p {
   padding: 40px 0 0;
 }
 
-/* hamburger menu */
-#menu {
-  display: none;
-}
-
 .hamburger-icon {
   display: none;
   font-size: 32px;
@@ -332,41 +340,37 @@ footer > p {
     gap: 0px;
   }
 
+  .nav,
+  .navBtn {
+    display: none;
+  }
+
+  .nav.active,
+  .navBtn.active {
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+  }
+
   .hamburger-icon {
     display: block;
   }
-  header nav,
-  header div {
-    max-height: 0;
-    overflow: hidden;
-    background: rgb(255, 255, 255, 1);
+
+  .allnavbar {
     flex-direction: column;
     width: 100%;
-  }
-
-  .item {
-    border-bottom: 1px solid var(--colortwo);
-    padding: 10px 30px;
-  }
-
-  .signIn,
-  .signUp {
     background-color: white;
-    color: black;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 0px;
-    border-bottom: 1px solid var(--colortwo);
+    gap: 15px;
+    align-items: flex-start;
+    margin-top: 15px;
   }
 
-  .signIn {
-    margin-top: 30px;
+  .allnavbar > div {
+    margin: 15px 0;
   }
 
-  #menu:checked ~ nav,
-  #menu:checked ~ div {
-    max-height: 600px;
-    margin-top: 0px;
+  .navBtn {
+    width: 100%;
   }
 
   /* main */
