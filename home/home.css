@@ -16,7 +16,7 @@ body {
 }
 
 /* header */
-header {
+.default {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,35 +29,48 @@ header {
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
-header > a > svg {
+.default > a > svg {
   width: 120px;
   height: auto;
 }
 
-header > nav > a {
+.allnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 250px;
+}
+
+.default > div > nav > a {
   text-decoration: none;
   color: black;
 }
 
-header > nav {
+.default > div > nav {
   display: flex;
   gap: 40px;
 }
 
-header > div {
+.default > div > div {
   display: flex;
   gap: 20px;
 }
 
-header > div > a {
+.default > div > div > a {
   text-decoration: none;
 }
 
-header > nav .active {
+.default > div > nav .active {
   color: var(--color);
 }
-header > nav a:hover:not(.active) {
+.default > div > nav a:hover:not(.active) {
   color: var(--color);
+}
+
+/* navBtn */
+.navBtn,
+.nav {
+  display: flex;
 }
 
 .signIn {
@@ -81,6 +94,111 @@ header > nav a:hover:not(.active) {
 
 .signIn:hover {
   background-color: #eeefff;
+}
+
+/* header after login */
+.afterLogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 70px;
+  background: rgb(255, 255, 255, 1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none;
+}
+
+.allnavbarLogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 150px;
+}
+
+.afterLogin > a > svg {
+  width: 120px;
+  height: auto;
+}
+
+.allnavbarLogin > nav > a {
+  text-decoration: none;
+  color: black;
+}
+
+.allnavbarLogin > nav {
+  display: flex;
+  gap: 40px;
+}
+
+.allnavbarLogin > div {
+  display: flex;
+  gap: 20px;
+}
+
+.allnavbarLogin > div > a {
+  text-decoration: none;
+}
+
+.allnavbarLogin > nav .active {
+  color: var(--color);
+}
+.allnavbarLogin > nav a:hover:not(.active) {
+  color: var(--color);
+}
+
+#location,
+.search {
+  margin: 20px 0px;
+}
+
+#location {
+  border: none;
+  font-size: 18px;
+}
+
+.allnavbarLogin img {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.buttonNav {
+  display: none;
+}
+
+.logout {
+  background-color: white;
+  border: 2px solid var(--color);
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+
+.menuLogout {
+  position: relative;
+  display: inline-block;
+}
+
+.profilePict {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.buttonNav {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  background-color: white;
+  padding: 10px 40px;
+  display: none;
+  z-index: 999;
 }
 
 /* hero section */
@@ -177,6 +295,7 @@ section > div {
 .benefits > div > div {
   margin: 50px 0;
   display: flex;
+  gap: 50px;
 }
 
 .list-benefit > div {
@@ -203,7 +322,6 @@ section > div {
 .list-benefit p {
   font-size: 14px;
   color: var(--colortwo);
-  padding-right: 50px;
   line-height: 20px;
 }
 
@@ -404,6 +522,7 @@ section > div {
 
 /* subcribe */
 .subscribe > div {
+  position: relative;
   background-color: var(--color);
   margin: 0 70px;
   border-radius: 30px;
@@ -422,7 +541,6 @@ section > div {
   display: flex;
   justify-content: center;
   gap: 7px;
-  position: relative;
 }
 
 .subscribe > div > div input {
@@ -448,8 +566,8 @@ section > div {
   height: 150px;
   border-radius: 50%;
   border: 5px solid white;
-  bottom: -120px;
-  left: 970px;
+  bottom: -70px;
+  right: -60px;
 }
 /* footer */
 footer > div {
@@ -515,11 +633,13 @@ footer > p {
   padding: 40px 0 0;
 }
 
-#menu {
+.hamburger-icon {
   display: none;
+  font-size: 32px;
+  cursor: pointer;
 }
 
-.hamburger-icon {
+.hamburger-login {
   display: none;
   font-size: 32px;
   cursor: pointer;
@@ -528,23 +648,116 @@ footer > p {
 /* responsive */
 @media screen and (max-width: 768px) {
   /* header */
-  header {
+  header > .default {
     flex-wrap: wrap;
     padding: 20px;
     height: 80px;
     gap: 0px;
   }
 
+  .allnavbar {
+    display: none;
+  }
+
+  .allnavbar.active {
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav,
+  .navBtn {
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+  }
+
   .hamburger-icon {
     display: block;
   }
-  header nav,
-  header div {
-    max-height: 0;
-    overflow: hidden;
-    background: rgb(255, 255, 255, 1);
+
+  .allnavbar {
     flex-direction: column;
     width: 100%;
+    background-color: white;
+    gap: 15px;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+
+  .allnavbar > div {
+    margin: 15px 0;
+  }
+
+  .navBtn {
+    width: 100%;
+  }
+
+  /* header after login*/
+  .afterLogin {
+    flex-wrap: wrap;
+    padding: 20px;
+    height: 80px;
+  }
+
+  .hamburger-login {
+    display: block;
+  }
+
+  .allnavbarLogin {
+    display: none;
+  }
+
+  .allnavbarLogin.active {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+  }
+
+  .allnavbarLogin {
+    width: 100%;
+    background-color: white;
+    gap: 15px;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+
+  .allnavbarLogin > div {
+    margin: 15px 0;
+  }
+
+  .items {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .allnavbarLogin > div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .logout {
+    width: 100%;
+  }
+
+  .nav,
+  .navBtn {
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+  }
+
+  .hamburger-login {
+    display: block;
   }
 
   .item {
@@ -552,27 +765,22 @@ footer > p {
     padding: 10px 30px;
   }
 
-  .signIn,
-  .signUp {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 0px;
+  #location,
+  .search {
     border-bottom: 1px solid var(--colortwo);
+    padding: 10px 30px;
   }
 
-  .signIn {
-    margin-top: 30px;
-  }
-
-  #menu:checked ~ nav,
-  #menu:checked ~ div {
-    max-height: 600px;
-    margin-top: 0px;
+  header img {
+    margin-bottom: 50px;
+    margin-left: 30px;
   }
 
   /* image */
+  .movie-list {
+    overflow-x: scroll;
+  }
+
   .movie-image img {
     width: 250px;
   }
@@ -607,16 +815,12 @@ footer > p {
 
   .subscribe > div > div button,
   .subscribe > div > div input {
-    max-width: 230px;
     padding: 20px 30px;
+    max-width: 100%;
   }
 
-  .circle {
-    bottom: -90px;
-    left: 50px;
-    transform: translateX(170%);
-    width: 100px;
-    height: 100px;
+  .subscribe > div > div input {
+    min-width: 100%;
   }
 
   /* footer */
