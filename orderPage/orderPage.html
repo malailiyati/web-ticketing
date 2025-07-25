@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="order page film spiderman">
     <title>Order</title>
+    <script src="../dom/navbar.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
@@ -29,17 +30,18 @@
                     fill="#1D4ED8" />
             </svg>
         </a>
-        <input type="checkbox" id="menu">
-        <label for="menu" class="material-symbols-outlined hamburger-icon">menu</label>
 
-        <nav class="items">
-            <a href="../home/home.html" class="item">Home</a>
-            <a href="../movie/movie.html" class="item">Movie</a>
-            <a href="" class="item">Buy Ticket</a>
-        </nav>
-        <div class="items">
-            <a href="../signIn/sigIn.html" class="signIn item">signIn</a>
-            <a href="../signUp/signUp.html" class="signUp item">signUp</a>
+        <span for="menu" class="material-symbols-outlined hamburger-icon">menu</span>
+        <div class="allnavbar">
+            <nav id="navbarNav" class="nav">
+                <a href="../home/home.html" class="item">Home</a>
+                <a href="../movie/movie.html" class="item">Movie</a>
+                <a href="" class="item">Buy Ticket</a>
+            </nav>
+            <div id="navbarBtn" class="navBtn">
+                <a href="../signIn/sigIn.html" class="signIn item">signIn</a>
+                <a href="../signUp/signUp.html" class="signUp item">signUp</a>
+            </div>
         </div>
     </header>
 
