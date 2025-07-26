@@ -16,11 +16,11 @@ body {
 }
 
 /* header */
-header {
+.default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 70px;
+  padding: 15px 20px;
   background: rgb(255, 255, 255, 1);
   position: fixed;
   width: 100%;
@@ -29,7 +29,7 @@ header {
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
-header > a > svg {
+.default > a > svg {
   width: 120px;
   height: auto;
 }
@@ -41,29 +41,29 @@ header > a > svg {
   gap: 250px;
 }
 
-header > div > nav > a {
+.default > div > nav > a {
   text-decoration: none;
   color: black;
 }
 
-header > div > nav {
+.default > div > nav {
   display: flex;
   gap: 40px;
 }
 
-header > div > div {
+.default > div > div {
   display: flex;
   gap: 20px;
 }
 
-header > div > div > a {
+.default > div > div > a {
   text-decoration: none;
 }
 
-header > div > nav .active {
+.default > div > nav .active {
   color: var(--color);
 }
-header > div > nav a:hover:not(.active) {
+.default > div > nav a:hover:not(.active) {
   color: var(--color);
 }
 
@@ -94,6 +94,111 @@ header > div > nav a:hover:not(.active) {
 
 .signIn:hover {
   background-color: #eeefff;
+}
+
+/* header after login */
+.afterLogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 70px;
+  background: rgb(255, 255, 255, 1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none;
+}
+
+.allnavbarLogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 150px;
+}
+
+.afterLogin > a > svg {
+  width: 120px;
+  height: auto;
+}
+
+.allnavbarLogin > nav > a {
+  text-decoration: none;
+  color: black;
+}
+
+.allnavbarLogin > nav {
+  display: flex;
+  gap: 40px;
+}
+
+.allnavbarLogin > div {
+  display: flex;
+  gap: 20px;
+}
+
+.allnavbarLogin > div > a {
+  text-decoration: none;
+}
+
+.allnavbarLogin > nav .active {
+  color: var(--color);
+}
+.allnavbarLogin > nav a:hover:not(.active) {
+  color: var(--color);
+}
+
+#location,
+.search {
+  margin: 20px 0px;
+}
+
+#location {
+  border: none;
+  font-size: 18px;
+}
+
+.allnavbarLogin img {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.buttonNav {
+  display: none;
+}
+
+.logout {
+  background-color: white;
+  border: 2px solid var(--color);
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+
+.menuLogout {
+  position: relative;
+  display: inline-block;
+}
+
+.profilePict {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.buttonNav {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  background-color: white;
+  padding: 10px 40px;
+  display: none;
+  z-index: 999;
 }
 
 /* hero section */
@@ -205,6 +310,7 @@ header > div > nav a:hover:not(.active) {
   border: none;
   border-radius: 7px;
   margin-top: 50px;
+  cursor: pointer;
 }
 
 .book-ticket > div:nth-of-type(1) {
@@ -226,6 +332,12 @@ header > div > nav a:hover:not(.active) {
   background-color: #eff0f6;
   font-size: 16px;
   color: #686868;
+  cursor: pointer;
+}
+
+.selectLocation {
+  display: flex;
+  align-items: center;
 }
 
 .book-ticket > div:nth-of-type(2) {
@@ -380,7 +492,8 @@ footer > p {
   padding: 40px 0 0;
 }
 
-.hamburger-icon {
+.hamburger-icon,
+.hamburger-login {
   display: none;
   font-size: 32px;
   cursor: pointer;
@@ -389,21 +502,32 @@ footer > p {
 /* responsive */
 @media screen and (max-width: 768px) {
   /* header */
-  header {
+  header > .default {
     flex-wrap: wrap;
-    padding: 0px;
+    padding: 15px 70px;
     height: 80px;
     gap: 0px;
+    position: relative;
+  }
+
+  .allnavbar {
+    display: none;
+  }
+
+  .allnavbar.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: -380px;
+    /* height: 100px; */
+  }
+
+  .nav {
+    width: 100%;
   }
 
   .nav,
   .navBtn {
-    display: none;
-  }
-
-  .nav.active,
-  .navBtn.active {
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
     /* height: 100px; */
@@ -428,6 +552,101 @@ footer > p {
 
   .navBtn {
     width: 100%;
+    padding: 20px;
+  }
+
+  /* header after login*/
+  .afterLogin {
+    flex-wrap: wrap;
+    padding: 0px;
+    height: 80px;
+    position: fixed;
+    border-bottom: 1px solid var(--colortwo);
+  }
+
+  .hamburger-login {
+    display: block;
+    margin-right: 20px;
+  }
+
+  .afterLogin svg {
+    margin-left: 20px;
+  }
+
+  .allnavbarLogin {
+    display: none;
+  }
+
+  .allnavbarLogin.active {
+    margin-top: 0px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    /* height: 100px; */
+  }
+
+  .allnavbarLogin {
+    width: 100%;
+    background-color: white;
+    gap: 15px;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+
+  .allnavbarLogin > div {
+    margin: 15px 0;
+  }
+
+  .items {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .allnavbarLogin > div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .logout {
+    width: 100%;
+  }
+
+  .nav,
+  .navBtn {
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+  }
+
+  .hamburger-login {
+    display: block;
+  }
+
+  .item {
+    border-bottom: 1px solid var(--colortwo);
+    padding: 10px 30px;
+  }
+
+  #location,
+  .search {
+    border-bottom: 1px solid var(--colortwo);
+    padding: 10px 30px;
+  }
+
+  .afterLogin img {
+    margin-bottom: 50px;
+    margin-left: 30px;
+  }
+
+  .logout {
+    margin-bottom: 30px;
+    margin-left: 30px;
   }
 
   /* main */
