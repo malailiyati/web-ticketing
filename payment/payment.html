@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="payment page">
     <title>Payment</title>
+    <script src="../dom/popup.js" defer></script>
     <script src="../dom/navbar.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
@@ -416,10 +417,36 @@
                     </div>
                 </div>
 
-                <div><a href="../paymentModal/paymentModal.html">Pay your order</a></div>
+                <div><a id="openPopUp">Pay your order</a></div>
             </div>
         </section>
 
+        <div class="overlay" id="payment">
+            <div>
+                <div class="close-btn" id="closePopUp">&times;</div>
+                <h1>Payment Info</h1>
+                <dl>
+                    <div>
+                        <dt>No. Rekening Virtual</dt>
+                        <div>
+                            <dd>12321328913829724</dd>
+                            <button>Copy</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <dt>Total Payment</dt>
+                        <dd>$30</dd>
+                    </div>
+                </dl>
+
+                <p>Pay this payment bill before it is due, <span>on June 23, 2023</span>. If the bill has not been paid
+                    by the specified time, it will be forfeited</p>
+
+                <a href="../ticketResult/ticketResult.html">Check Payment</a>
+                <a href="">Pay later</a>
+            </div>
+        </div>
     </main>
 
     <footer>
