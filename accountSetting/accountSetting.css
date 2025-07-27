@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --color: #1d4ed8;
   --colortwo: #a0a3bd;
@@ -17,7 +11,7 @@ body {
 }
 
 /* header */
-.default {
+/* .default {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,10 +60,10 @@ body {
 }
 .default > div > nav a:hover:not(.active) {
   color: var(--color);
-}
+} */
 
 /* navBtn */
-.navBtn,
+/* .navBtn,
 .nav {
   display: flex;
 }
@@ -95,10 +89,10 @@ body {
 
 .signIn:hover {
   background-color: #eeefff;
-}
+} */
 
 /* header after login */
-.afterLogin {
+/* .afterLogin {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -200,10 +194,10 @@ body {
   padding: 10px 40px;
   display: none;
   z-index: 999;
-}
+} */
 
 /* section satu*/
-main {
+/* main {
   display: flex;
   margin: 120px 90px;
   gap: 40px;
@@ -310,11 +304,11 @@ main > section img {
 .info-account > div > div:nth-child(2) progress {
   width: 100%;
   height: 30px;
-}
+} */
 
 /* section 2 */
 
-main > section:nth-of-type(2) > div {
+/* main > section:nth-of-type(2) > div {
   background-color: white;
   border-radius: 20px;
   margin-bottom: 50px;
@@ -426,10 +420,10 @@ main > section:nth-of-type(2) > div:nth-child(3) > div > div > input {
   color: white;
   text-align: center;
   border-radius: 7px;
-}
+} */
 
 /* footer */
-footer > div {
+/* footer > div {
   display: flex;
   justify-content: space-between;
 }
@@ -492,7 +486,7 @@ footer > p {
   color: #4e4b66;
   text-align: center;
   padding: 40px 0 0;
-}
+} */
 
 .hamburger-icon,
 .hamburger-login {
