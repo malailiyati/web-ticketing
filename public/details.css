@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+#movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.movie-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+img {
+  width: 100%;
+  height: auto;
+}
