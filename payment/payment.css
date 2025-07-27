@@ -380,6 +380,111 @@ section > div > div:nth-of-type(4) a {
   border-radius: 5px;
 }
 
+#openPopUp,
+#closePopUp {
+  cursor: pointer;
+}
+
+/* overlay */
+.overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 252%;
+  justify-content: center;
+  z-index: 1;
+}
+
+#closePopUp {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay > div {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 25px;
+  width: 40%;
+  height: fit-content;
+  margin-top: 500px;
+  font-size: 16px;
+  color: var(--colortwo);
+}
+
+.overlay > div > h1 {
+  font-size: 24px;
+  text-align: center;
+  color: black;
+  margin-bottom: 35px;
+}
+
+.overlay > div > dl > div > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.overlay > div > dl > div > div:nth-of-type(1) dd {
+  font-weight: 700;
+  color: black;
+}
+
+.overlay > div > dl > div > div:nth-of-type(1) button {
+  color: var(--color);
+  border: 1px solid var(--color);
+  background-color: white;
+  padding: 7px 25px;
+  border-radius: 5px;
+}
+
+.overlay > div > dl > div:nth-of-type(2) > dd {
+  color: var(--color);
+  font-weight: 700;
+}
+
+.overlay > div > dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.overlay > div > p {
+  line-height: 28px;
+}
+.overlay > div > p span {
+  color: #d00707;
+}
+
+.overlay > div > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.overlay > div > a:nth-of-type(1) {
+  background-color: var(--color);
+  color: white;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin: 60px 0 25px;
+}
+
+.overlay > div > a:nth-of-type(2) {
+  color: var(--color);
+}
+
 /* footer */
 footer > div {
   display: flex;
@@ -617,6 +722,18 @@ footer > p {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: space-around;
+  }
+  .overlay > div {
+    width: 80%;
+  }
+  .overlay > div > dl > div {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .overlay {
+    height: 200%;
   }
 
   /* footer */
